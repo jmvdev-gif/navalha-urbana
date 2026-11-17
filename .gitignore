@@ -1,0 +1,17 @@
+# dependências
+node_modules/
+
+# build do Next.js
+.next/
+out/
+*.tsbuildinfo
+next-env.d.ts
+
+# ambiente e deploy
+.env*
+.vercel
+
+# sistema / logs
+.DS_Store
+Thumbs.db
+npm-debug.log*
