@@ -3,76 +3,89 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
-    --background: 240 10% 4%;
-    --foreground: 0 0% 98%;
-    --card: 240 10% 7%;
-    --card-foreground: 0 0% 98%;
-    --popover: 240 10% 7%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 28 87% 70%;
-    --primary-foreground: 240 10% 4%;
-    --secondary: 240 5% 15%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 240 5% 15%;
-    --muted-foreground: 240 5% 65%;
-    --accent: 28 87% 70%;
-    --accent-foreground: 240 10% 4%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 240 5% 18%;
-    --input: 240 5% 18%;
-    --ring: 28 87% 70%;
-    --radius: 0.75rem;
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply bg-bone font-sans text-ink antialiased;
+  }
+
+  section[id] {
+    scroll-margin-top: 4.5rem;
+  }
+
+  ::selection {
+    @apply bg-poste text-white;
+  }
+
+  :focus-visible {
+    @apply outline outline-2 outline-offset-2 outline-poste;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
   }
 }
 
-body {
-  background-color: #0b0b0c;
-  color: #f4f4f5;
-  font-family: var(--font-sans), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-  overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
+@layer components {
+  .container-site {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-10;
+  }
+
+  .eyebrow {
+    @apply text-xs font-semibold uppercase tracking-[0.22em];
+  }
+
+  .display {
+    @apply font-display font-extrabold uppercase leading-[0.88] tracking-[-0.005em];
+  }
+
+  .accent {
+    @apply font-serif font-normal normal-case italic tracking-normal;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3.5 text-sm font-semibold transition duration-200 active:scale-[0.98] disabled:pointer-events-none disabled:opacity-40;
+  }
+
+  .btn-primary {
+    @apply btn bg-poste text-white shadow-[0_10px_30px_-12px_rgba(210,58,44,0.8)] hover:bg-poste-dark;
+  }
+
+  .btn-light {
+    @apply btn border border-white/30 text-white backdrop-blur-sm hover:border-white hover:bg-white/10;
+  }
+
+  .btn-dark {
+    @apply btn bg-ink text-bone hover:bg-ink-700;
+  }
+
+  .btn-outline {
+    @apply btn border border-ink/20 text-ink hover:border-ink hover:bg-ink hover:text-bone;
+  }
 }
 
-/* Custom Gold Accent Glow Effects */
-.gold-glow {
-  box-shadow: 0 0 25px rgba(245, 176, 112, 0.25);
-}
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 
-.gold-glow-sm {
-  box-shadow: 0 0 12px rgba(245, 176, 112, 0.15);
-}
+  .grain {
+    background-image: radial-gradient(rgba(17, 18, 20, 0.06) 1px, transparent 1px);
+    background-size: 3px 3px;
+  }
 
-.gold-border-glow {
-  border-color: #f5b070;
-  box-shadow: 0 0 15px rgba(245, 176, 112, 0.2);
-}
-
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: #0b0b0c;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #27272a;
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #f5b070;
-}
-
-/* Hide scrollbar for horizontal chip containers */
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-.no-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+  @media (prefers-reduced-motion: reduce) {
+    .animate-marquee {
+      animation: none;
+    }
+  }
 }

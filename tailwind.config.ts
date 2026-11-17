@@ -1,31 +1,44 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-  darkMode: ["class"],
-  content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
+  content: ["./app/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./lib/**/*.{ts,tsx}"],
   theme: {
     extend: {
       colors: {
-        brand: {
-          gold: "#F5B070",
-          "gold-hover": "#E5A060",
-          "gold-light": "#FDE6D2",
-          dark: "#0B0B0C",
-          surface: "#141416",
-          "surface-light": "#1C1C1F",
-          border: "#27272A",
-          muted: "#A1A1AA",
+        // Tinta: quase preto, levemente frio
+        ink: {
+          DEFAULT: "#111214",
+          800: "#1B1C1F",
+          700: "#26282C",
+          600: "#3A3C41",
         },
+        // Osso / papel: fundos claros quentes
+        bone: { DEFAULT: "#F1EBE1", dark: "#E6DDCF" },
+        paper: "#FAF7F2",
+        sand: "#D9CDBB",
+        // Texto secundário
+        stone: "#625D55",
+        mist: "#ABA59B",
+        // Vermelho do poste de barbearia
+        poste: { DEFAULT: "#D23A2C", dark: "#B02E22", light: "#F6DCD6" },
       },
       fontFamily: {
         sans: ["var(--font-sans)", "system-ui", "sans-serif"],
+        display: ["var(--font-display)", "Impact", "sans-serif"],
+        serif: ["var(--font-serif)", "Georgia", "serif"],
+      },
+      keyframes: {
+        marquee: {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(-50%)" },
+        },
+      },
+      animation: {
+        marquee: "marquee 38s linear infinite",
       },
     },
   },
   plugins: [],
 };
+
 export default config;
