@@ -15,10 +15,6 @@ import { Visit } from "@/components/site/Visit";
 export default function Home() {
   return (
     <BookingProvider>
-      <p className="relative z-[60] bg-poste px-4 py-1.5 text-center text-[11px] font-medium text-white sm:text-xs">
-        <span className="sm:hidden">Projeto conceito · dados fictícios</span>
-        <span className="hidden sm:inline">Projeto conceito · barbearia fictícia — endereço e contatos não são reais</span>
-      </p>
       <Header />
       <main>
         <Hero />

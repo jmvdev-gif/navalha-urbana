@@ -1,13 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
   <rect width="32" height="32" rx="8" fill="#111214"/>
-  <defs>
-    <clipPath id="p"><rect x="11" y="5" width="10" height="22" rx="5"/></clipPath>
-  </defs>
-  <rect x="11" y="5" width="10" height="22" rx="5" fill="#F1EBE1"/>
-  <g clip-path="url(#p)" fill="#D23A2C">
-    <path d="M8 9 L24 1 L24 5 L8 13 Z"/>
-    <path d="M8 17 L24 9 L24 13 L8 21 Z"/>
-    <path d="M8 25 L24 17 L24 21 L8 29 Z"/>
-    <path d="M8 33 L24 25 L24 29 L8 37 Z"/>
-  </g>
+  <rect x="8" y="7" width="4.5" height="18" fill="#F1EBE1"/>
+  <rect x="19.5" y="7" width="4.5" height="18" fill="#F1EBE1"/>
+  <path d="M8 7 H12.5 L24 25 H19.5 Z" fill="#D23A2C"/>
 </svg>
