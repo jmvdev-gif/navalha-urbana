@@ -23,6 +23,19 @@ npm run dev
 
 Abre em http://localhost:3000.
 
+## Publicar (Cloudflare Pages)
+
+O site é exportado como arquivos estáticos: `npm run build` gera a pasta `out/`.
+No painel da Cloudflare (**Workers & Pages → Create → Pages → Connect to Git**):
+
+- **Framework preset:** Next.js (Static HTML Export)
+- **Build command:** `npm run build`
+- **Build output directory:** `out`
+- **Variável:** `NODE_VERSION` = `20`
+- **Custom domain:** `barbearia.techjmv.com`
+
+Os cabeçalhos de segurança ficam em `public/_headers`.
+
 ## Onde mudar as coisas
 
 | O quê | Arquivo |
